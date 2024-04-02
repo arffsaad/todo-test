@@ -2,7 +2,7 @@
 
 <div>
     <div class="flex justify-between w-screen px-12 h-24 items-center">
-        <h1 class="text-5xl font-bold font-sans">My Todos</h1>
+        <span><h1 class="text-5xl font-bold font-sans">My Todos</h1> <h2 class="text-sm font-normal italic">(hover on todo to see descriptions)</h2></span>
         <button wire:click="$dispatch('open-createModal')" class="p-2 bg-green-600 hover:bg-green-700 rounded-lg font-bold font-sans text-white text-sm">+ New Todo</button>
     </div>
     <div class="p-4">
