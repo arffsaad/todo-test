@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Todo::class)->name('home');
+Route::view('/', 'welcome')->name('home');
+
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
@@ -54,4 +55,6 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
+
+    Route::get('/todos', Todo::class)->name('todos');
 });

@@ -18,6 +18,7 @@ class CreateModal extends Component
     
     public function save() {
         Todo::create([
+            'user_id' => auth()->id(),
             'title' => $this->title,
             'description' => $this->description,
             'completed' => false,

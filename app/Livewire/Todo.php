@@ -12,15 +12,15 @@ class Todo extends Component
     public $edit = false;
     public function render()
     {
-        $this->todos = TodoModel::orderBy('completed', 'asc')->get();
+        $this->todos = auth()->user()->todos()->orderBy('completed', 'asc')->get();
         return view('livewire.todo', ['todos' => $this->todos]);
     }
 
     #[On('refreshTodos')]
     public function refreshTodos() {
         $this->todos = [];
-        $this->todos = TodoModel::orderBy('completed', 'asc')->get();
-        $this->dispatch('$refresh');
+        $this->todos = auth()->user()->todos()->orderBy('completed', 'asc')->get();
+        $this->dispatch('$refresh'); // trying to refresh after update, works in DB but not in FE somehow. pending fix since it's not a critical issue.
     }
 
     #[On('editModal')]

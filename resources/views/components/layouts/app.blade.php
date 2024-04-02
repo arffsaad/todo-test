@@ -25,10 +25,10 @@
     </head>
 
     <body>
-        <div class="w-screen bg-gradient-to-r from-slate-500 to-slate-800 h-12 sticky-0">
-            <div class="">
-
-            </div>
+        <div class="w-screen bg-gradient-to-r from-slate-500 to-slate-800 h-12 sticky-0 text-right flex items-center justify-end">
+            <a href="{{route('home')}}" class="font-semibold text-white pr-4">Home</a>
+            <a href="{{route('todos')}}" class="font-semibold text-white pr-4">My Todos</a>
+            <form method="post" action="{{route('logout')}}" class="font-semibold text-white pr-4"><button type="submit">Logout</button>@csrf</form>
         </div>
         {{ $slot }}
     </body>
